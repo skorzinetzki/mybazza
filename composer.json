@@ -1,0 +1,10 @@
+{
+    "name": "steve-korzinetzki/mybazza",
+    "require": {
+        "behat/behat": "2.4.*@stable"
+    },
+    "minimum-stability": "dev",
+    "config": {
+        "bin-dir": "bin/"
+    }
+}
