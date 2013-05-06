@@ -36,6 +36,8 @@
 return array(
 
 	'docs' => array('handles' => 'docs'),
-        'composer' => array('auto' => true),
+    'composer' => array('auto' => true),
+    'bob',
+    'bootstrapper' => array('auto' => true),
 
 );
