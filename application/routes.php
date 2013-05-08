@@ -34,7 +34,9 @@
 
 Route::get('/', function()
 {
-	return View::make('main');
+	return View::make('main')
+            ->with('categories',Category::all())
+            ->with('articles',Article::all());
 });
 
 /*
