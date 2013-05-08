@@ -15,8 +15,8 @@ class Create_Categories_Table {
             $table->increments('id');
             $table->string('name')->unique();
             $table->timestamps();
-            $table->integer('category_parent_id')->unsigned();
-            $table->foreign('category_parent_id')->references('id')->on('categories')->on_delete('restrict');            
+            $table->integer('category_id')->unsigned()->nullable();
+            $table->foreign('category_id')->references('id')->on('categories')->on_delete('restrict');            
         });
 	}
 
