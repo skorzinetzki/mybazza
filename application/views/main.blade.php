@@ -6,9 +6,20 @@
         <title>MyBazza</title>
         <meta name="viewport" content="width=device-width">
         {{ Asset::container('bootstrapper')->styles() }}
-        {{ Asset::container('bootstrapper')->scripts(); }}
+        {{ Asset::container('bootstrapper')->scripts() }}
     </head>
     <body>
       {{ Typography::info('<i class="icon-info-sign"></i> Bisher kein Layout vorhanden.') }}
+      {{ Table::striped_bordered_hover_condensed_open() }}
+      {{ Table::headers('ID', 'Name') }}
+      {{ Table::body($categories)->ignore('created_at', 'updated_at', 'category_id') }}
+      {{ Table::close() }}
+      @foreach ($categories as $category)
+        The category name is {{ $category->name }}.
+      @endforeach
+      
+      @foreach ($articles as $article)
+        Article {{ $article->name }} is in Category {{ $article->category->name }}
+      @endforeach
     </body>
 </html>
