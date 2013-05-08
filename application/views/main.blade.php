@@ -9,13 +9,18 @@
         {{ Asset::container('bootstrapper')->scripts() }}
     </head>
     <body>
+      @if  ( $categories )
       {{ Typography::info('<i class="icon-info-sign"></i> Bisher kein Layout vorhanden.') }}
       {{ Table::striped_bordered_hover_condensed_open() }}
       {{ Table::headers('ID', 'Name') }}
       {{ Table::body($categories)->ignore('created_at', 'updated_at', 'category_id') }}
       {{ Table::close() }}
+      @endif
       @foreach ($categories as $category)
-        The category name is {{ $category->name }}.
+        The category name is {{ $category->name }}. 
+        @if ( $category->parent() ) 
+          And its parent is {{ $category->parent()->name }}.
+        @endif
       @endforeach
       
       @foreach ($articles as $article)

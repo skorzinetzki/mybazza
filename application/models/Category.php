@@ -7,4 +7,9 @@ class Category extends Eloquent {
     {
         return $this->has_many('Article');
     }
+    
+    public function parent()
+    {
+        return Category::where('id', '=', $this->category_id)->first();
+    }
 }
