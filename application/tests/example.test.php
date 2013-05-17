@@ -1,6 +1,8 @@
 <?php
 
-class TestExample extends PHPUnit_Framework_TestCase {
+//require_once('testcase.test.php');
+
+class TestExample extends TestCase {
 
 	/**
 	 * Test that a given condition is met.
@@ -9,7 +11,7 @@ class TestExample extends PHPUnit_Framework_TestCase {
 	 */
 	public function testSomethingIsTrue()
 	{
-		$this->assertTrue(true);	
+		$this->assertTrue(true);
 	}
 
 }
