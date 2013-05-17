@@ -21,18 +21,49 @@ class Article_Controller extends Base_Controller {
 		return View::make('article.widget')->with('article', Article::find($articleId));
 	}
 
-	public function action_detail()
+	public function action_detail($articleId)
 	{
-		// code here..
-
-		return View::make('article.detail');
+		return View::make('article.detail')->with('article', Article::find($articleId));
 	}
 
 	public function action_create()
 	{
-		// code here..
+        // handle data that was sent
+        if (Request::method() == 'POST') {
+            // catch data from request
+            $articleData = array(
+                'name' => Input::get('name'),
+                'description' => Input::get('description'),
+                'category_id' => Input::get('category_id')
+            );
 
-		return View::make('article.create');
+            // define validation rules for article
+            $rules = array(
+                'name' => 'required|min:5|max:128',
+                'description' => 'required',
+                'category_id' => 'required'
+            );
+
+            $validator = Validator::make($articleData, $rules);
+            if ( $validator->fails() )
+            {
+                // redirect back to the form
+                // with errors and input
+                return Redirect::to('article/create')
+                    ->with_errors($validator)
+                    ->with_input();
+            }
+
+            // create the new article
+            // the step with creditpoint suggestion is still missing
+            $article = new Article($articleData);
+            $article->save();
+
+            // redirect to viewing new article
+            return Redirect::to('article/detail/'.  $article->id);
+        }
+
+		return View::make('article.create')->with('categories', Category::lists('name','id'));
 	}
 
 	public function action_ratesuggestion()
