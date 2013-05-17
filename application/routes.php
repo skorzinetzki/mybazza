@@ -39,6 +39,9 @@ Route::get('/', function()
             ->with('articles',Article::all());
 });
 
+// Route for Article_Controller
+Route::controller('article');
+
 /*
 |--------------------------------------------------------------------------
 | Application 404 & 500 Error Handlers
