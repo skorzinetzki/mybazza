@@ -1,3 +1,19 @@
-<h1>article.index</h1>
+@layout('main')
 
-<p>This view has been auto-generated to accompany the Article_Controller's action_index()</p>
+@section('title')
+Article index
+@endsection
+
+@section('navigation')
+    @parent
+    <p>specific menu-items should be here.</p>
+@endsection
+
+@section('content')
+    <div class="row">
+        {{ render_each('article.widget', $articles, 'article') }}
+    </div>
+@endsection
+
+@section('footer')
+@endsection
