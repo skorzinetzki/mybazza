@@ -35,5 +35,22 @@
       @foreach ($articles as $article)
         Article {{ $article->name }} is in Category {{ $article->category->name }}
       @endforeach
+     @if ($orderedCategories)
+     Größe ist: {{ count($orderedCategories) }}
+     Ordered Categories:
+      @foreach ($orderedCategories as $category)
+      <br/>   Name: {{ $category->name }}
+      @endforeach
+      @endif
+      
+     <br/>
+     
+     <form>
+        Artikelname: <input type="text" name="firstname"><br>
+        Beschreibung: <input type="text" name="lastname">
+        <input type="submit" value="Submit">
+     </form>
+     
+     <p> {{ HTML::link_to_route('new_article', 'Neuen Artikel Einstellen') }}</p>
     </body>
 </html>

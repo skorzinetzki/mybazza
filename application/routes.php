@@ -31,14 +31,15 @@
 |		});
 |
 */
-
-Route::get('/', function()
+Route::get('/',function()
 {
-	return View::make('main')
-            ->with('categories',Category::all())
-            ->with('articles',Article::all());
+    return View::make('home.index');
 });
 
+Route::get('article', array('uses'=>'article@index'));
+Route::get('new',array('as'=>'new_article','uses'=>'article@newArticleView'));	
+//Route::get('orderedCategories',array('uses'=>'article@categories') );
+//Route::controller('article');
 /*
 |--------------------------------------------------------------------------
 | Application 404 & 500 Error Handlers
