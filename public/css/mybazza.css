@@ -1,0 +1,23 @@
+root { 
+    display: block;
+}
+
+.category, .article {
+    border-width: 3px;
+    border-color: cornflowerblue;
+    border-radius: 5px;
+    border-style: solid;
+    margin: 20px;
+    padding: 3px;
+    width: 140px;
+    height: 140px;
+    background-color: cornflowerblue;
+}
+
+.category {
+    float: top;
+}
+
+.article {
+    float: left;
+}
