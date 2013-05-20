@@ -3,13 +3,14 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>MyBazza</title>
+        <title>MyBazza @yield('title')</title>
         <meta name="viewport" content="width=device-width">
         <link rel="stylesheet" type="text/css" href="css/mybazza.css">
         {{ Asset::container('bootstrapper')->styles() }}
         {{ Asset::container('bootstrapper')->scripts() }}
     </head>
     <body>
+        @section('navigation')
         <div class="row">
             <div class="span3 offset6 text-right">
                 <a href="#foobar">Artikel einstellen</a>
@@ -31,6 +32,8 @@
                 </form>
             </div>
         </div>
+        @yield_section
+        @section('content')
         <div class="row">
             <div class="span6">
                 <p class="lead">
@@ -79,6 +82,10 @@
                     <div class="article">Artikel: {{ $article->name }}</div>
                 @endforeach
             </div>
+            @yield_section
+
+            @section('footer')
+            @yield_section
         </div>
     </body>
 </html>
