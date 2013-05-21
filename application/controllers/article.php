@@ -41,7 +41,8 @@ class Article_Controller extends Base_Controller {
             $rules = array(
                 'name' => 'required|min:5|max:128',
                 'description' => 'required',
-                'category_id' => 'required'
+                'category_id' => 'required',
+                'image' => 'image|mimes:jpg'
             );
 
             $validator = Validator::make($articleData, $rules);
@@ -58,6 +59,8 @@ class Article_Controller extends Base_Controller {
             // the step with creditpoint suggestion is still missing
             $article = new Article($articleData);
             $article->save();
+
+            $article->saveImage(Input::file('image'));
 
             // redirect to viewing new article
             return Redirect::to('article/detail/'.  $article->id);

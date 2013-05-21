@@ -7,10 +7,7 @@
         - $article = should contain one Article Model Object
 --}}
 
-<div class="span4">
-    <div>
-        {{ Image::polaroid('http://lorempixel.com/360/180/animals/', 'Alternative Description', array('title' => 'My Picture Title')) }}
-    </div>
+<div class="article" style="background-image: url('{{ $article->imgPath() }}');">
     <h3>{{ $article->name }}</h3>
-    {{ Typography::horizontal_dl(array('Category' => $article->category->name, 'Description' => $article->description, 'Creditpoints' => $article->creditpoints)) }}
+    {{-- Typography::horizontal_dl(array('Category' => $article->category->name, 'Description' => $article->description, 'Creditpoints' => $article->creditpoints)) --}}
 </div>
