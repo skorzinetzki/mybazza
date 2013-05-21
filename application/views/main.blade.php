@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <title>MyBazza @yield('title')</title>
         <meta name="viewport" content="width=device-width">
-        <link rel="stylesheet" type="text/css" href="css/mybazza.css">
+        {{ HTML::style('css/mybazza.css') }}
         {{ Asset::container('bootstrapper')->styles() }}
         {{ Asset::container('bootstrapper')->scripts() }}
     </head>
@@ -23,7 +23,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="span6"><h1>{{ HTML::link('/', 'MyBazza Logo') }}</h1></div>
+                    <div class="span6">{{ HTML::image('img/logo.svg', 'MyBazza', array('width' => 300)) }}</div>
                     <div class="span6 text-right">
                         <form class="form-search">
                             <div class="input-append">
