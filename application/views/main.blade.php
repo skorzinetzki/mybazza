@@ -13,7 +13,7 @@
         @section('navigation')
         <div class="row">
             <div class="span3 offset6 text-right">
-                <a href="#foobar">Artikel einstellen</a>
+                <a href="/article/create">Artikel einstellen</a>
                 <a href="#foobar">Mein Konto</a>
             </div>
             <div class="span3 text-right">
