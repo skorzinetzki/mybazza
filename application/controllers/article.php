@@ -42,7 +42,7 @@ class Article_Controller extends Base_Controller {
                 'name' => 'required|min:5|max:128',
                 'description' => 'required',
                 'category_id' => 'required',
-                'image' => 'image'
+                'image' => 'image|mimes:jpg'
             );
 
             $validator = Validator::make($articleData, $rules);
