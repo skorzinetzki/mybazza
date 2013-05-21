@@ -1,57 +1,53 @@
-<!doctype html>
-<html lang="en">
-<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<title>Laravel: A Framework For Web Artisans</title>
-	<meta name="viewport" content="width=device-width">
-	{{ HTML::style('laravel/css/style.css') }}
-</head>
-<body>
-	<div class="wrapper">
-		<header>
-			<h1>Laravel</h1>
-			<h2>A Framework For Web Artisans</h2>
+@layout('main')
 
-			<p class="intro-text" style="margin-top: 45px;">
-			</p>
-		</header>
-		<div role="main" class="main">
-			<div class="home">
-				<h2>Learn the terrain.</h2>
+@section('title')
+Home
+@endsection
 
-				<p>
-					You've landed yourself on our default home page. The route that
-					is generating this page lives at:
-				</p>
+@section('content')
+<div class="row">
+    <div class="span6">
+        <p class="lead">
+            Auf myBazza kann Du nicht mehr benötigte Kinderartikel
+            wie Kleidung oder Spielzeug mit anderen tauschen. Für Dich ist die Nutzung
+            kinderleicht und der Versand besonders günstig.
+        </p>
+    </div>
+    <div class="span2">
+        <h1>1.</h1>
+        <p>Eigene Artikel verkaufen und Credits erhalten.</p>
+    </div>
+    <div class="span2">
+        <h1>2.</h1>
+        <p>Artikel aus dem Angebot auswählen und bequem mit Credits bezahlen.</p>
+    </div>
+    <div class="span2">
+        <h1>3.</h1>
+        <p>Neuen Artikel erhalten und glücklich sein.</p>
+    </div>
+    </div>
+    <div class="row">
+    <div class="span2"><h4>Stöbern in...</h4></div>
+    <div class="span8 offset2"><h4>Tolle Angebote für Dich...</h4></div>
+</div>
 
-				<pre>{{ path('app') }}routes.php</pre>
-
-				<p>And the view sitting before you can be found at:</p>
-
-				<pre>{{ path('app') }}views/home/index.blade.php</pre>
-
-				<h2>Grow in knowledge.</h2>
-
-				<p>
-					Learning to use Laravel is amazingly simple thanks to
-					its {{ HTML::link('docs', 'wonderful documentation') }}.
-				</p>
-
-				<h2>Create something beautiful.</h2>
-
-				<p>
-					Now that you're up and running, it's time to start creating!
-					Here are some links to help you get started:
-				</p>
-
-				<ul class="out-links">
-					<li><a href="http://laravel.com">Official Website</a></li>
-					<li><a href="http://forums.laravel.com">Laravel Forums</a></li>
-					<li><a href="http://github.com/laravel/laravel">GitHub Repository</a></li>
-				</ul>
-			</div>
-		</div>
-	</div>
-</body>
-</html>
+<div class="row">
+    <div class="span2">
+        @forelse ($categories as $category)
+            <div class="category">Bild: {{ $category->name }}</div>
+            @if ( $category->children )
+                @foreach ($category->children as $child)
+                    <div class="category">Bild: {{ $category->name }} - {{ $child->name }}</div>
+                @endforeach
+            @endif
+        @empty
+            <div>no categories...</div>
+        @endforelse
+    </div>
+    <div class="span8 offset2">
+        @foreach ($articles as $article)
+            <div class="article">Artikel: {{ $article->name }}</div>
+        @endforeach
+    </div>
+</div>
+@endsection
