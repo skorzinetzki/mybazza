@@ -45,9 +45,7 @@ Home
         @endforelse
     </div>
     <div class="span8 offset2">
-        @foreach ($articles as $article)
-            <div class="article">Artikel: {{ $article->name }}</div>
-        @endforeach
+        {{ render_each('article.widget', $articles, 'article') }}
     </div>
 </div>
 @endsection
