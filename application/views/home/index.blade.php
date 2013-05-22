@@ -34,14 +34,19 @@ Home
 <div class="row">
     <div class="span2">
         @forelse ($categories as $category)
-            <div class="category">Bild: {{ $category->name }}</div>
             @if ( $category->children )
                 @foreach ($category->children as $child)
-                    <div class="category">Bild: {{ $category->name }} - {{ $child->name }}</div>
+                    <a href="{{ url('article/index') }}" alt="{{ $category->name . ': ' . $child->name }}">
+                    <div class="category text-right">{{ $category->name . ': ' . $child->name }}</div>
+                    </a>
                 @endforeach
+            @else
+                <a href="{{ url('article/index') }}" alt="{{ $category->name }}">
+                <div class="category text-right">{{ $category->name }}</div>
+                </a>
             @endif
         @empty
-            <div>no categories...</div>
+            <div>{{ Typography::warning('Houston, We\'ve Got a Problem') }}</div>
         @endforelse
     </div>
     <div class="span8 offset2">

@@ -7,7 +7,6 @@
         - $article = should contain one Article Model Object
 --}}
 
-<div class="article" style="background-image: url('{{ $article->imgPath() }}');">
-    <h3>{{ $article->name }}</h3>
-    {{-- Typography::horizontal_dl(array('Category' => $article->category->name, 'Description' => $article->description, 'Creditpoints' => $article->creditpoints)) --}}
+<div class="article text-right" style="background-image: url('{{ $article->imgPath() }}');">
+    {{ Typography::muted('Credits: ' . $article->creditpoints) }}
 </div>

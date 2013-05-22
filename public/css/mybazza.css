@@ -6,7 +6,8 @@ root {
     border-width: 3px;
     border-radius: 5px;
     border-style: solid;
-    margin: 20px;
+    margin-right: 40px;
+    margin-bottom: 40px;
     padding: 3px;
     width: 140px;
     height: 140px;

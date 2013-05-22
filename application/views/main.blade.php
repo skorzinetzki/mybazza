@@ -23,7 +23,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="span6">{{ HTML::image('img/logo.svg', 'MyBazza', array('width' => 300)) }}</div>
+                    <div class="span6"><a href='/' alt="MyBazza">{{ HTML::image('img/logo.svg', 'MyBazza', array('width' => 300)) }}</a></div>
                     <div class="span6 text-right">
                         <form class="form-search">
                             <div class="input-append">
