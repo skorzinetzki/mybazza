@@ -66,12 +66,14 @@ class Article_Controller extends Base_Controller {
             return Redirect::to('article/detail/'.  $article->id);
         }
 
-		return View::make('article.create')->with('categories', Category::lists('name','id'));
+		return View::make('article.create')->with('categories', Category::lists('name','id'))
+                                                   ->with('conditions', Condition::lists('status','id'))
+                                                   ->with('maturities', Maturity::lists('age','id'));
 	}
 
 	public function action_ratesuggestion()
 	{
-		// code here..
+		//round(condition.factor+maturity.factor)*1,5+price/10)
 
 		return View::make('article.ratesuggestion');
 	}

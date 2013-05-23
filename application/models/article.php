@@ -12,6 +12,16 @@ class Article extends Eloquent {
     {
         return $this->belongs_to('Category');
     }
+    
+    public function condition()
+    {
+        return $this->belongs_to('Condition');
+    }
+    
+    public function maturity()
+    {
+        return $this->belongs_to('Maturity');
+    }
 
     public function imgPath() {
         return Article::path() . $this->id . '.jpg';

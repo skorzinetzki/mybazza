@@ -23,9 +23,9 @@ Artikel einstellen
         {{ Form::control_group(Form::label('description', 'Description'), Form::xlarge_textarea('description', Input::old('description'), array('rows' => '5')), '', $errors->first('description', Typography::error(':message'))) }}
 
         <h4>Schritt 2: Artikelbewertung</h4>
-        {{-- Form::control_group(Form::label('condition', 'Condition'), Form::select('condition', conditions), '', $errors->first('condition', Typography::error(':message'))) --}}
-        {{-- Form::control_group(Form::label('age', 'Age'), Form::select('age', ages), '', $errors->first('age', Typography::error(':message'))) --}}
-        {{-- Form::control_group(Form::label('original_price', 'Original price'), Form::xlarge_text('original_price', Input::old('original_price')), '', $errors->first('name', Typography::error(':message'))) --}}
+        {{ Form::control_group(Form::label('condition_id', 'Condition'), Form::select('condition_id', $conditions), '', $errors->first('condition_id', Typography::error(':message'))) }}
+        {{ Form::control_group(Form::label('maturity_id', 'Maturity'), Form::select('maturity_id', $maturities), '', $errors->first('maturity_id', Typography::error(':message'))) }}
+        {{ Form::control_group(Form::label('price', 'Original price'), Form::xlarge_text('price', Input::old('original_price')), '', $errors->first('name', Typography::error(':message'))) }}
         Du erhälst für Deinen Artikel X Credits.
 
         <h4>Schritt 3: Bilder hinzufügen</h4>
