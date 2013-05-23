@@ -26,4 +26,9 @@ class Article extends Eloquent {
             ->resize(Article::$imgSize , Article::$imgSize , 'crop')
             ->save(path('public') . $this->imgPath(), 90);
     }
+
+    public function rateSuggestion() {
+        // here will be some logic
+        return 0;
+    }
 }
