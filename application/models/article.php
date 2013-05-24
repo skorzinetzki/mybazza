@@ -29,17 +29,9 @@ class Article extends Eloquent {
         return Article::path() . $this->id . '.jpg';
     }
 
-    public function price() {
-        return $this->price();
-    }
-
-    public function rate() {
-        return $this->rate();
-    }
-
     public function rateSuggestion() {
         // calculate current rate
-        $rateCurrent = round(($this->maturity()->factor() + $this->condition()->factor()) * 1, 5 + $this->price() / 10);
+        $rateCurrent = round(($this->maturity->factor+ $this->condition->factor) * 1, 5 + $this->price/ 10);
         // get average rate of items of the same category
         $rateAverage = $this->calculateRateAverage();
         // get average of rateCurrent and rateAverage
