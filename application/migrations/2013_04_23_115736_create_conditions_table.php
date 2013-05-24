@@ -17,27 +17,27 @@ class Create_Conditions_Table {
 
         DB::table('conditions')->insert(array(
             'status' => 'unused',
-            'factor' => 5
+            'factor' => 8
         ));
 
         DB::table('conditions')->insert(array(
             'status' => 'undamaged',
-            'factor' => 4
+            'factor' => 6
         ));
 
         DB::table('conditions')->insert(array(
             'status' => 'well',
-            'factor' => 3
+            'factor' => 4
         ));
 
         DB::table('conditions')->insert(array(
             'status' => 'damaged',
-            'factor' => 1
+            'factor' => 2
         ));
 
         DB::table('conditions')->insert(array(
             'status' => 'poor',
-            'factor' => 0
+            'factor' => 1
         ));
     }
 
