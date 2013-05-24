@@ -46,75 +46,7 @@ class Create_Articles_Table {
             'creditpoints' => 17,
             'category_id' => DB::table('categories')->where('name', '=', 'Jacken')->first()->id
         ));
-        //3
-        DB::table('articles')->insert(array(
-            'name' => 'Jacke Lion', 
-            'description' => 'Jungenjacke mit Löwenkopfabbild auf der Rückseite, gemustert.',
-            'condition_id' => DB::table('conditions')->where('status', '=', 'unused')->first()->id,
-            'maturity_id' => DB::table('maturities')->where('age', '=', 'less then 3 months')->first()->id,
-            'price' => 32.75,
-            'creditpoints' => 17,
-            'category_id' => DB::table('categories')->where('name', '=', 'Jacken')->first()->id
-        ));
         
-        DB::table('articles')->insert(array(
-            'name' => 'Jacke Lion', 
-            'description' => 'Jungenjacke mit Löwenkopfabbild auf der Rückseite, gemustert.',
-            'condition_id' => DB::table('conditions')->where('status', '=', 'unused')->first()->id,
-            'maturity_id' => DB::table('maturities')->where('age', '=', 'less then 3 months')->first()->id,
-            'price' => 32.75,
-            'creditpoints' => 17,
-            'category_id' => DB::table('categories')->where('name', '=', 'Jacken')->first()->id
-        ));
-        
-        DB::table('articles')->insert(array(
-            'name' => 'Jacke Lion', 
-            'description' => 'Jungenjacke mit Löwenkopfabbild auf der Rückseite, gemustert.',
-            'condition_id' => DB::table('conditions')->where('status', '=', 'unused')->first()->id,
-            'maturity_id' => DB::table('maturities')->where('age', '=', 'less then 3 months')->first()->id,
-            'price' => 32.75,
-            'creditpoints' => 17,
-            'category_id' => DB::table('categories')->where('name', '=', 'Jacken')->first()->id
-        ));
-        
-        DB::table('articles')->insert(array(
-            'name' => 'Jacke Lion', 
-            'description' => 'Jungenjacke mit Löwenkopfabbild auf der Rückseite, gemustert.',
-            'condition_id' => DB::table('conditions')->where('status', '=', 'unused')->first()->id,
-            'maturity_id' => DB::table('maturities')->where('age', '=', 'less then 3 months')->first()->id,
-            'price' => 32.75,
-            'creditpoints' => 17,
-            'category_id' => DB::table('categories')->where('name', '=', 'Jacken')->first()->id
-        ));
-        
-        DB::table('articles')->insert(array(
-            'name' => 'Jacke Lion', 
-            'description' => 'Jungenjacke mit Löwenkopfabbild auf der Rückseite, gemustert.',
-            'condition_id' => DB::table('conditions')->where('status', '=', 'unused')->first()->id,
-            'maturity_id' => DB::table('maturities')->where('age', '=', 'less then 3 months')->first()->id,
-            'price' => 32.75,
-            'creditpoints' => 17,
-            'category_id' => DB::table('categories')->where('name', '=', 'Jacken')->first()->id
-        ));
-        
-        DB::table('articles')->insert(array(
-            'name' => 'Jacke Lion', 
-            'description' => 'Jungenjacke mit Löwenkopfabbild auf der Rückseite, gemustert.',
-            'condition_id' => DB::table('conditions')->where('status', '=', 'unused')->first()->id,
-            'maturity_id' => DB::table('maturities')->where('age', '=', 'less then 3 months')->first()->id,
-            'price' => 32.75,
-            'creditpoints' => 17,
-            'category_id' => DB::table('categories')->where('name', '=', 'Jacken')->first()->id
-        ));
-        DB::table('articles')->insert(array(
-            'name' => 'Jacke Lion', 
-            'description' => 'Jungenjacke mit Löwenkopfabbild auf der Rückseite, gemustert.',
-            'condition_id' => DB::table('conditions')->where('status', '=', 'unused')->first()->id,
-            'maturity_id' => DB::table('maturities')->where('age', '=', 'less then 3 months')->first()->id,
-            'price' => 32.75,
-            'creditpoints' => 17,
-            'category_id' => DB::table('categories')->where('name', '=', 'Jacken')->first()->id
-        ));
         DB::table('articles')->insert(array(
             'name' => 'Jacke grün mit Applikation', 
             'description' => 'Grüne Jacke mit einer Applikation auf dem Rücken -PGA Tour 2013-',
