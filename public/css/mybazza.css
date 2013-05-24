@@ -16,7 +16,9 @@ root {
 .category {
     float: top;
     border-color: #E29ABC;
-    background-color: #E29ABC;
+    background-color: #FFFFFF;
+    background-repeat: no-repeat;
+    background-position: center, center;
 }
 
 .article {

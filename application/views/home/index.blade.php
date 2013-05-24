@@ -37,7 +37,7 @@ Home
             @if ( $category->children )
                 @foreach ($category->children as $child)
                     <a href="{{ url('article/index') }}" alt="{{ $category->name . ': ' . $child->name }}">
-                    <div class="category text-right">{{ $category->name . ': ' . $child->name }}</div>
+                    <div class="category text-right" style="background-image: url('img/{{ $child->name }}.png');">{{ $category->name . ': ' . $child->name }}</div>
                     </a>
                 @endforeach
             @else
