@@ -24,7 +24,7 @@ Artikel einstellen
         <h4>Schritt 2: Artikelbewertung</h4>
         {{ Form::control_group(Form::label('condition_id', 'Condition'), Form::select('condition_id', $conditions), '', $errors->first('condition_id', Typography::error(':message'))) }}
         {{ Form::control_group(Form::label('maturity_id', 'Maturity'), Form::select('maturity_id', $maturities), '', $errors->first('maturity_id', Typography::error(':message'))) }}
-        {{ Form::control_group(Form::label('price', 'Original price'), Form::xlarge_text('price', Input::old('original_price')), '', $errors->first('original_price', Typography::error(':message'))) }}
+        {{ Form::control_group(Form::label('price', 'Original price'), Form::xlarge_text('price', Input::old('price')), '', $errors->first('price', Typography::error(':message'))) }}
 
         <h4>Schritt 3: Bilder hinzufügen</h4>
         {{ Form::control_group(Form::label('image', 'Image'), Form::file('image')) }}

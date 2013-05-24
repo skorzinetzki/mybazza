@@ -6,7 +6,7 @@ class Article extends Eloquent {
     public static $imgSize = 140;
 
     public static function path() {
-        return 'img/article/';
+        return '/img/article/';
     }
 
     public function calculateRateAverage() {
