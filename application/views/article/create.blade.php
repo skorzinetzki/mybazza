@@ -10,12 +10,11 @@ Artikel einstellen
 
 @section('content')
     <div class="row">
-        <div class="span12"><h4>In drei Schritten Deinen Artikel eingestellen</h4></div>
+        <div class="span12"><h4>In drei Schritten Deinen Artikel einstellen</h4></div>
     </div>
     <div class="row">
         <div class="span6 offset1">
         {{ Form::horizontal_open_for_files() }}
-        {{ Alert::info('<i class="icon-info-sign"></i> Just for debugging: ' . Request::method())->open() }}
 
         <h4>Schritt 1: Artikelbeschreibung</h4>
         {{ Form::control_group(Form::label('name', 'Name'), Form::xlarge_text('name', Input::old('name')), '', $errors->first('name', Typography::error(':message'))) }}
@@ -25,14 +24,13 @@ Artikel einstellen
         <h4>Schritt 2: Artikelbewertung</h4>
         {{ Form::control_group(Form::label('condition_id', 'Condition'), Form::select('condition_id', $conditions), '', $errors->first('condition_id', Typography::error(':message'))) }}
         {{ Form::control_group(Form::label('maturity_id', 'Maturity'), Form::select('maturity_id', $maturities), '', $errors->first('maturity_id', Typography::error(':message'))) }}
-        {{ Form::control_group(Form::label('price', 'Original price'), Form::xlarge_text('price', Input::old('original_price')), '', $errors->first('name', Typography::error(':message'))) }}
-        Du erhälst für Deinen Artikel X Credits.
+        {{ Form::control_group(Form::label('price', 'Original price'), Form::xlarge_text('price', Input::old('original_price')), '', $errors->first('original_price', Typography::error(':message'))) }}
 
         <h4>Schritt 3: Bilder hinzufügen</h4>
         {{ Form::control_group(Form::label('image', 'Image'), Form::file('image')) }}
- 
+
         {{ Form::actions(array(Button::primary_submit('Submit article')->with_icon('ok'), Form::button('Cancel')->with_icon('remove'))) }}
-        {{ Form::close() }}  
+        {{ Form::close() }}
         </div>
     </div>
 @endsection
