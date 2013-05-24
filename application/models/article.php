@@ -10,7 +10,7 @@ class Article extends Eloquent {
     }
 
     public function calculateRateAverage() {
-        return DB::table('articles')->where('category_id', '=', $this->category_id)->avg('creditpoints');
+        return DB::table('articles')->where('category_id', '=', $this->category_id)->where('id', '!=',$this->id)->avg('creditpoints');
     }
 
     public function category() {
