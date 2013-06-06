@@ -13,18 +13,22 @@
         <div class="container">
             @section('navigation')
                 <div class="row">
-                    <div class="span3 offset6 text-right">
-                        {{ HTML::link('article/create', 'Artikel einstellen') }}
-                        <a href="#foobar">Mein Konto</a>
+                    <div class="span7">
+                        <a href='/' alt="MyBazza">{{ HTML::image('img/logo.svg', 'MyBazza', array('width' => 300)) }}</a>
+                        {{ HTML::image('img/Kinder.jpg', 'Kinder') }}
                     </div>
-                    <div class="span3 text-right">
-                         <a href="#foobar">Über MyBazza</a>
-                         <a href="#foobar">Impressum</a>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="span6"><a href='/' alt="MyBazza">{{ HTML::image('img/logo.svg', 'MyBazza', array('width' => 300)) }}</a></div>
-                    <div class="span6 text-right">
+                    <div class="span5 text-right">
+                        <span style="float: left">
+                            {{ HTML::link('article/create', 'Artikel einstellen') }}
+                            &nbsp;&nbsp;
+                            <a href="#foobar">Mein Konto</a>
+                        </span>
+                        <span style="float: right">
+                            <a href="#foobar">Über MyBazza</a>
+                            &nbsp;&nbsp;
+                            <a href="#foobar">Impressum</a>
+                            <br><br>
+                        </span>
                         <form class="form-search">
                             <div class="input-append">
                                 <input type="text" class="span4 search-query">
